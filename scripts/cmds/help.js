@@ -34,7 +34,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += `\n.   /)    /)\n  (｡•ㅅ•｡)\n╭∪━∪━━━━━━━━❮✿\n│𝑆𝐻𝐼𝑁𝑅𝐴㉨𝐾𝑈𝑆𝐴𝐾𝐴𝐵𝐸🔥\n├━━━━━━━━━━━•❖\n│𝐋𝐢𝐬𝐭𝐞 𝐝𝐞𝐬 𝐜𝐦𝐝𝐬\n╰━━━━━━━━━━━•❖`; // replace with your name 
+      msg += `\n.   /)    /)\n  (｡•ㅅ•｡)\n╭∪━∪━━━━━━━Ꙭ\n│𝙉𝘼𝙍𝙐𝙏𝙊㉨𝙐𝙕𝙐𝙈𝘼𝙆𝙄\n├━━━━━━━━━━━•❖\n│𝐋𝐢𝐬𝐭𝐞 𝐝𝐞𝐬 𝐜𝐦𝐝𝐬\n╰━━━━━━━━━━━•❖`; // replace with your name 
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -46,7 +46,7 @@ module.exports = {
 
       Object.keys(categories).forEach((category) => {
         if (category !== "info") {
-          msg += `\n╭━━━━━━━━━━━•❖\n│𖠸⊱–{${category.toUpperCase()} }–⊰𖠸`;
+          msg += `\n╭━━━━━━━━━━━•❖\n│𖣘–{${category.toUpperCase()} }–𖣘`;
 
 
           const names = categories[category].commands.sort();
@@ -60,14 +60,14 @@ module.exports = {
       });
 
       const totalCommands = commands.size;
-      msg += `╭━━━━━━━━━━━•❖\n│𝐈𝐍𝐅𝐎 \n│𝐒𝐔𝐏𝐏𝐋𝐄́𝐌𝐄𝐍𝐓𝐀𝐈𝐑𝐄\n├━━━━━━━━━━━•❖\n│𝐣'𝐚𝐢 ${totalCommands} 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞𝐬\n│𝐞𝐧 𝐦𝐚 𝐩𝐨𝐬𝐬𝐞𝐬𝐬𝐢𝐨𝐧 \n├━━━━━━━━━━━•❖`;
+      msg += `╭━━━━━━━━━━━•❖\n│𝐈𝐍𝐅𝐎 \n│𝐒𝐔𝐏𝐏𝐋𝐄́𝐌𝐄𝐍𝐓𝐀𝐈𝐑𝐄\n├━━━━━━━━━━━•❖\n│𝐣'𝐚𝐢 ${totalCommands} 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞𝐬\n│𝐝𝐢𝐬𝐩𝐨𝐧𝐢𝐛𝐥𝐞𝐬 \n├━━━━━━━━━━━•❖`;
       msg += `\n│𝗲́𝗰𝗿𝗶𝘁 ${prefix} 𝗵𝗲𝗹𝗽 + 𝗻𝗼𝗺 𝗱𝗲 𝗹𝗮\n│𝗰𝗺𝗱, 𝐩𝐨𝐮𝐫 𝐞𝐧 𝐬𝐚𝐯𝐨𝐢𝐫\n│ 𝐝'𝐚𝐯𝐚𝐧𝐭𝐚𝐠𝐞\n╰━━━━━━━━━━━•❖`;
-      msg += `\n╭━━━━━━━━━━━•❖\n│🔥𝘌𝘯𝘦𝘯•𝘯𝘰•𝘚𝘩𝘰𝘶𝘣𝘰𝘶𝘵𝘢𝘪🔥\n╰━━━━━━━━━━━•❖`; // its not decoy so change it if you want 
+      msg += `\n╭━━━━━━━━━━━•❖\n│᯽ナ•ル•ト•う•ず•ま•き᯽ \n╰━━━━━━━━━━━Ꙭ`; // its not decoy so change it if you want 
 
       const helpListImages = [
-        "https://i.ibb.co/vXxtgt6/image.jpg", // add image link here
-                "https://i.ibb.co/2N643Sh/image.jpg",
-        "https://i.ibb.co/jHRcKvV/image.jpg",
+        "https://i.ibb.co/YTyXbyy/image.jpg", // add image link here
+                "https://i.ibb.co/718fzs0/image.jpg",
+        "https://i.ibb.co/YTyXbyy/image.jpg",
         // Add more image links as needed
       ];
 
@@ -102,7 +102,7 @@ module.exports = {
   │ Version: ${configCommand.version || "1.0"}
   │ Rôle : \n${roleText}
   │ Time per command: ${configCommand.countDown || 1}s
-  │ Author: \n${author}🔥
+  │ Author: \n${author}
   ├── utilisation
   │ ${usage}
   ├── Notes
@@ -127,4 +127,4 @@ function roleTextToString(roleText) {
     default:
       return "Unknown role";
   }
-		    }
+	      }
