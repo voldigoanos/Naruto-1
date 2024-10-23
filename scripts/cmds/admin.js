@@ -34,13 +34,13 @@ module.exports = {
 			listAdmin: "👑 | Danh sách admin:\n%1"
 		},
 		en: {
-			added: "✅ | Added admin role for %1 users:\n%2",
-			alreadyAdmin: "\n⚠️ | %1 users already have admin role:\n%2",
+			added: "✅ | 𝗟𝗲 𝗻𝗼𝘂𝘃𝗲𝗮𝘂 𝗵𝗼𝗸𝗮𝗴𝗲\n%2",
+			alreadyAdmin: "\n⚠️ | %1 𝗟'𝘂𝘁𝗶𝗹𝗶𝘀𝗮𝘁𝗲𝘂𝗿 𝗲𝘀𝘁 𝗱𝗲́𝗷𝗮̀ 𝗵𝗼𝗸𝗮𝗴𝗲:\n%2",
 			missingIdAdd: "⚠️ | Please enter ID or tag user to add admin role",
-			removed: "✅ | Removed admin role of %1 users:\n%2",
+			removed: "✅ | %1 𝗽𝗲𝗿𝘀𝗼𝗻𝗻𝗲(𝘀) 𝗻𝗲 𝘀𝗼𝗻𝘁 𝗽𝗹𝘂𝘀 𝗵𝗼𝗸𝗮𝗴𝗲:\n%2",
 			notAdmin: "⚠️ | %1 users don't have admin role:\n%2",
 			missingIdRemove: "⚠️ | Please enter ID or tag user to remove admin role",
-			listAdmin: "👑 | List of admins:\n%1"
+			listAdmin: "👑 | 𝗟𝗜𝗦𝗧𝗘𝗦 𝗗𝗘𝗦 𝗛𝗢𝗞𝗔𝗚𝗘\n%1"
 		}
 	},
 
