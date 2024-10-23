@@ -25,7 +25,7 @@ module.exports = {
 			moneyOf: "%1 đang có %2$"
 		},
 		en: {
-			money: "You have %1$",
+			money: "T'as %1 balles en poche...✍",
 			moneyOf: "%1 has %2$"
 		}
 	},
