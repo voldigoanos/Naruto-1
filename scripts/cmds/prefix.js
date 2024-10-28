@@ -7,7 +7,7 @@ module.exports = {
 			role: 0,
 			shortDescription: "prefix bot",
 			longDescription: "le prefix du bot",
-			category: "reply",
+			category: "prefix",
 	},
 onStart: async function(){}, 
 onChat: async function({
@@ -15,6 +15,6 @@ onChat: async function({
 	message,
 	getLang
 }) {
-	if (event.body && event.body.toLowerCase() == "prefix") return message.reply(" MON PREFIX EST [★]");
+	if (event.body && event.body.toLowerCase() == "prefix") return message.reply(" MON PREFIX EST [🌟]");
 }
 };
