@@ -29,9 +29,9 @@ module.exports = {
 				await api.sendMessage('No group chats found.', event.threadID);
 			} else {
 				const formattedList = filteredList.map((group, index) =>
-					`│${index + 1}. ${group.threadName}\n│𝐓𝐈𝐃: ${group.threadID}`
+					`│${index + 1}•𝗟𝗲 𝘃𝗶𝗹𝗹𝗮𝗴𝗲 𝗻𝗼𝗺𝗺𝗲́\n│${group.threadName}\n│𝐓𝐈𝐃: ${group.threadID}`
 				);
-				const message = `╭─╮\n│𝐋𝐢𝐬𝐭 𝐨𝐟 𝐠𝐫𝐨𝐮𝐩 𝐜𝐡𝐚𝐭𝐬:\n${formattedList.map(line => `${line}`).join("\n")}\n╰───────────ꔪ`;
+				const message = `╭━━━━━━━━━━━━[🌟]\n│𝐋𝐢𝐬𝐭𝐞 𝐝𝐞𝐬 𝐯𝐢𝐥𝐥𝐚𝐠𝐞𝐬:\n${formattedList.map(line => `${line}`).join("\n")}\n╰━━━━━━━━━━━━[🌟]`;
 				await api.sendMessage(message, event.threadID, event.messageID);
 			}
 		} catch (error) {
