@@ -1,77 +1,57 @@
 const axios = require('axios');
+const UPoLPrefix = [
+  '-ai',
+  'ai',
+  '/ai',
+  'bot',
+  'ask'
+]; 
 
-async function fetchFromAI(url, params) {
- try {
- const response = await axios.get(url, { params });
- return response.data;
- } catch (error) {
- console.error(error);
- return null;
- }
-}
+  module.exports = {
+  config: {
+    name: 'ai',
+    version: '1.2.1',
+    role: 0,
+    category: 'AI',
+    author: 'voldigo anos',
+    shortDescription: '',
+    longDescription: '',
+  },
+  
+  onStart: async function () {},
+  onChat: async function ({ message, event, args, api, threadID, messageID }) {
+      
+      const ahprefix = UPoLPrefix.find((p) => event.body && event.body.toLowerCase().startsWith(p));
+      if (!ahprefix) {
+        return; 
+      } 
+      
+     const upol = event.body.substring(ahprefix.length).trim();
+   if (!upol) {
+        await message.reply('╭────────────────\n|𝘀𝗮𝗹𝘂𝘁 𝗺𝗼𝗿𝘁𝗲𝗹 💁‍♂️ \n|𝗺𝗼𝗶 𝗰'𝗲𝘀𝘁 🩸𝘃𝗼𝗹𝗱𝗶𝗴𝗼 𝗻𝗮𝗺𝗶𝗸𝗮𝘇𝗲🩸\n|𝘂𝗻𝗲 𝗶𝗻𝘁𝗲𝗹𝗹𝗶𝗴𝗲𝗻𝗰𝗲 𝗮𝗿𝘁𝗶𝗳𝗶𝗰𝗶𝗲𝗹𝗹𝗲 \n|𝗰𝗿𝗲é 𝗽𝗮𝗿 🌿𝘃𝗼𝗹𝗱𝗶𝗴𝗼 𝗮𝗻𝗼𝘀🌿 ');
+        return;
+      }
+      
+      const apply = ['𝗲𝗻 𝗾𝘂𝗼𝗶 𝗽𝘂𝗶𝘀 𝗷𝗲 𝘁'𝗮𝗶𝗱𝗲𝗿'];
+      
+     const randomapply = apply[Math.floor(Math.random() * apply.length)];
 
-async function getAIResponse(input, userName, userId, messageID) {
- const services = [
- { url: 'https://ai-chat-gpt-4-lite.onrender.com/api/hercai', params: { question: input } }
- ];
+     
+      if (args[0] === 'hi') {
+          message.reply(`${randomapply}`);
+          return;
+      }
+      
+    const encodedPrompt = encodeURIComponent(args.join(" "));
 
- let response = `Pose t'as question, je vais t'aider `;
- let currentIndex = 0;
+   await message.reply('𝘃𝗼𝗹𝗱𝗶𝗴𝗼 𝗮𝗻𝗼𝘀..');
+  
+    const response = await axios.get(`https://sandipbaruwal.onrender.com/gemini?prompt=${encodedPrompt}`);
+ 
+     const UPoL = response.data.answer; 
 
- for (let i = 0; i < services.length; i++) {
- const service = services[currentIndex];
- const data = await fetchFromAI(service.url, service.params);
- if (data && (data.gpt4 || data.reply || data.response)) {
- response = data.gpt4 || data.reply || data.response;
- break;
- }
- currentIndex = (currentIndex + 1) % services.length; // Passer au service suivant
- }
-
- return { response, messageID };
-}
-
-module.exports = {
- config: {
- name: 'ai',
- author: 'shizuka',
- role: 0,
- aliase: ["ai"],
- category: 'ai-chat',
- shortDescription: 'ai to ask anything',
- },
- onStart: async function ({ api, event, args }) {
- const input = args.join(' ').trim();
- if (!input) {
- api.sendMessage(" ", event.threadID, event.messageID);
- return;
- }
-
- api.getUserInfo(event.senderID, async (err, ret) => {
- if (err) {
- console.error(err);
- return;
- }
- const userName = ret[event.senderID].name;
- const { response, messageID } = await getAIResponse(input, userName, event.senderID, event.messageID);
- api.sendMessage(`᯽..𝙉𝘼𝙍𝙐𝙏𝙊 𝙐𝙕𝙐𝙈𝘼𝙆𝙄..᯽\n━━━━━━━━━━━━━━━━\n⧉${response} ⧉\n━━━━━━━━━━━━━━━━`, event.threadID, messageID);
- });
- },
- onChat: async function ({ api, event, message }) {
- const messageContent = event.body.trim().toLowerCase();
- if (messageContent.startsWith("ai")) {
- const input = messageContent.replace(/^ai\s*/, "").trim();
- api.getUserInfo(event.senderID, async (err, ret) => { 
- if (err) {
- console.error(err);
- return;
- }
- const userName = ret[event.senderID].name;
- const { response, messageID } = await getAIResponse(input, userName, event.senderID, message.messageID);
- message.reply(`᯽..𝙉𝘼𝙍𝙐𝙏𝙊 𝙐𝙕𝙐𝙈𝘼𝙆𝙄..᯽\n━━━━━━━━━━━━━━━━\n⧉${userName} , ${response} ⧉\n━━━━━━━━━━━━━━━━\n `, messageID);
-api.setMessageReaction("✅", event.messageID, () => {}, true);
-
- });
- }
- }
+      const upolres = `${UPoL}`;
+      
+        message.reply(upolres);
+  }
 };
