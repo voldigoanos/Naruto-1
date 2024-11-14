@@ -3,13 +3,13 @@ const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "[ 🐥 | JUNIOR V2 ]"; // changing this wont change the goatbot V2 of list cmd it is just a decoyy
+const doNotDelete = "『[✦𝐓𝐄𝐈𝐍𝐃𝐎] 𝐞𝐧𝐨𝐜𝐤༄』"; // changing this wont change the goatbot V2 of list cmd it is just a decoyy
 
 module.exports = {
   config: {
     name: "help",
     version: "1.17",
-    author: "Shizuka junior", // original author Kshitiz 
+    author: "NTKhang", // original author Kshitiz 
     countDown: 5,
     role: 0,
     shortDescription: {
@@ -34,7 +34,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += `\n.   /)    /)\n  (｡•ㅅ•｡)\n╭∪━∪━━━━━━━Ꙭ\n│𝙉𝘼𝙍𝙐𝙏𝙊㉨𝙐𝙕𝙐𝙈𝘼𝙆𝙄\n├━━━━━━━━━━━•❖\n│𝐋𝐢𝐬𝐭𝐞 𝐝𝐞𝐬 𝐜𝐦𝐝𝐬\n╰━━━━━━━━━━━•❖`; // replace with your name 
+      msg += `❁𝐂𝐌𝐃 𝐔𝐂𝐇𝐈𝐖𝐀❁ \n ✰✰✰✰✰✰✰✰✰✰\n\n`; // replace with your name 
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -46,28 +46,28 @@ module.exports = {
 
       Object.keys(categories).forEach((category) => {
         if (category !== "info") {
-          msg += `\n╭━━━━━━━━━━━•❖\n│𖣘–{${category.toUpperCase()} }–𖣘`;
+          msg += `\_________⍟⍟⍟_______\n ➳❦『${category.toUpperCase()}』`;
 
 
           const names = categories[category].commands.sort();
           for (let i = 0; i < names.length; i += 3) {
-            const cmds = names.slice(i, i + 1).map((item) => `➫${item}`);
-            msg += `\n│${cmds.join(" ".repeat(Math.max(1, 10 - cmds.join("").length)))}`;
+            const cmds = names.slice(i, i + 3).map((item) => ` ⍟${item}\n`);
+            msg += `\n ${cmds.join(" ".repeat(Math.max(1, 10 - cmds.join("").length)))}`;
           }
 
-          msg += `\n╰━━━━━━━━━━━•❖`;
+          msg += ``;
         }
       });
 
       const totalCommands = commands.size;
-      msg += `╭━━━━━━━━━━━•❖\n│𝐈𝐍𝐅𝐎 \n│𝐒𝐔𝐏𝐏𝐋𝐄́𝐌𝐄𝐍𝐓𝐀𝐈𝐑𝐄\n├━━━━━━━━━━━•❖\n│𝐣'𝐚𝐢 ${totalCommands} 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞𝐬\n│𝐝𝐢𝐬𝐩𝐨𝐧𝐢𝐛𝐥𝐞𝐬 \n├━━━━━━━━━━━•❖`;
-      msg += `\n│𝗲́𝗰𝗿𝗶𝘁 ${prefix} 𝗵𝗲𝗹𝗽 + 𝗻𝗼𝗺 𝗱𝗲 𝗹𝗮\n│𝗰𝗺𝗱, 𝐩𝐨𝐮𝐫 𝐞𝐧 𝐬𝐚𝐯𝐨𝐢𝐫\n│ 𝐝'𝐚𝐯𝐚𝐧𝐭𝐚𝐠𝐞\n╰━━━━━━━━━━━•❖`;
-      msg += `\n╭━━━━━━━━━━━•❖\n│᯽ナ•ル•ト•う•ず•ま•き᯽ \n╰━━━━━━━━━━━Ꙭ`; // its not decoy so change it if you want 
+      msg += `\n ______________________\n\n• 𝚖𝚘𝚗 𝚜𝚑𝚊𝚛𝚒𝚗𝚐𝚊𝚗 𝚊 𝚍𝚎𝚓𝚊 𝚌𝚘𝚙𝚒𝚎𝚛 ${totalCommands} 𝚝𝚎𝚌𝚑𝚗𝚒𝚚𝚞𝚎𝚜\n\n__________⍟⍟⍟________\n`;
+      msg += `•𝚝𝚊𝚙𝚎: 「${prefix} 𝗵𝗲𝗹𝗽」+「 𝗰𝗺𝗱𝗡𝗮𝗺𝗲」𝚙𝚘𝚞𝚛 𝚟𝚘𝚒𝚛 𝚕'𝚞𝚝𝚒𝚕𝚒𝚜𝚊𝚝𝚒𝚘𝚗\n`;
+      msg += `•••【𝐈𝐓𝐀𝐂𝐇𝐈۞𝐔𝐂𝐇𝐈𝐖𝐀】••• `; // its not decoy so change it if you want 
 
       const helpListImages = [
-        "https://i.ibb.co/YTyXbyy/image.jpg", // add image link here
-                "https://i.ibb.co/718fzs0/image.jpg",
-        "https://i.ibb.co/YTyXbyy/image.jpg",
+        "https://i.ibb.co/m5HPcXr/image.jpg", // add image link here
+        "https://i.ibb.co/fpVhHQq/image.jpg",
+        "https://i.ibb.co/dp0Tw5t/image.jpg",
         // Add more image links as needed
       ];
 
@@ -93,22 +93,22 @@ module.exports = {
         const guideBody = configCommand.guide?.en || "No guide available.";
         const usage = guideBody.replace(/{p}/g, prefix).replace(/{n}/g, configCommand.name);
 
-        const response = `╭── NOM ────⭓
+        const response = `╭── NAME ────💿
   │ ${configCommand.name}
   ├── INFO
   │ Description: ${longDescription}
-  │ Autres noms : ${configCommand.aliases ? configCommand.aliases.join(", ") : "Ne pas avoir"}
-  │ Autres noms dans votre groupe : Je n'en ai pas
+  │ Other names: ${configCommand.aliases ? configCommand.aliases.join(", ") : "Do not have"}
+  │ Other names in your group: Do not have
   │ Version: ${configCommand.version || "1.0"}
-  │ Rôle : \n${roleText}
+  │ Role: ${roleText}
   │ Time per command: ${configCommand.countDown || 1}s
-  │ Author: \n${author}
-  ├── utilisation
+  │ Author: ${author}
+  ├── Usage
   │ ${usage}
   ├── Notes
   │ The content inside <XXXXX> can be changed
-  │ The content inside [a|b|c] is A or B or C
-  ╰━━━━━━━❖`;
+  │ The content inside [a|b|c] is a or b or c
+  ╰━━━━━━━📀`;
 
         await message.reply(response);
       }
@@ -127,4 +127,4 @@ function roleTextToString(roleText) {
     default:
       return "Unknown role";
   }
-	      }
+      }
